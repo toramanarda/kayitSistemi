@@ -140,6 +140,12 @@ export default function StudentRegistration() {
             </button>
           </>
         )}
+         {step === 3 && !formCompleted && (
+
+
+
+
+
       </>
       )
 }>
