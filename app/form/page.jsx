@@ -140,14 +140,14 @@ export default function StudentRegistration() {
             </button>
           </>
         )}
-         {step === 3 && !formCompleted && (
-           <>
-           <p>
-             <label>
-               Dönemi: <input type="text" name="term" required onChange={handleChange} />
-             </label>
-           </p>
-           <p>
+        {step === 3 && !formCompleted && (
+          <>
+            <p>
+              <label>
+                Dönemi: <input type="text" name="term" required onChange={handleChange} />
+              </label>
+            </p>
+            <p>
               <label>
                 Eğitmeni: <input type="text" name="instructor" required onChange={handleChange} />
               </label>
@@ -175,8 +175,8 @@ export default function StudentRegistration() {
             </button>
           </>
         )}
-           
-           {step === 4 && !formCompleted && (
+
+        {step === 4 && !formCompleted && (
           <>
             <p>
               <label>
@@ -245,15 +245,35 @@ export default function StudentRegistration() {
             <button type="submit">Kaydet</button>
           </>
         )}
-        
+
         {step === 5 && (
           <>
+            <h2>{certificateStatus}</h2>
+            <h3>Öğrenci Bilgileri</h3>
+            <ul>
+              <li>Adı Soyadı: {formData.name} {formData.surname}</li>
+              <li>Doğum Tarihi: {formData.birthDate}</li>
+              <li>Cinsiyet: {formData.gender}</li>
+              <li>TC No: {formData.tcno}</li>
+              <li>Ön Sınav Puanı: {formData.preExamScore}</li>
+              <li>Mülakat Notları: {formData.interviewNotes}</li>
+              <li>Mülakat Puanı: {formData.interviewScore}</li>
+              <li>Dönem: {formData.term}</li>
+              <li>Eğitmen: {formData.instructor}</li>
+              <li>Bölüm: {formData.department}</li>
+              <li>Sınıf: {formData.class}</li>
+              <li>Ödevleri Tamamladı mı: {formData.completedAssignments}</li>
+              <li>Sınıfta Derse Katıldı mı: {formData.participation}</li>
+              <li>Proje Geliştirdi mi: {formData.developedProject}</li>
+              <li>Derste Odaklandı mı: {formData.focused}</li>
+            </ul>
 
 
 
 
 
 
-      </>
-      )
-}>
+
+          </>
+        )
+        }>
