@@ -175,6 +175,20 @@ export default function StudentRegistration() {
             </button>
           </>
         )}
+           
+           {step === 4 && !formCompleted && (
+          <>
+            <p>
+              <label>
+                Ödevlerin tamamını tamamladı mı?
+                <select name="completedAssignments" required onChange={handleChange} value={formData.completedAssignments || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+
 
 
 
