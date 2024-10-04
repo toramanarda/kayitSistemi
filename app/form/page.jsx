@@ -188,6 +188,16 @@ export default function StudentRegistration() {
                 </select>
               </label>
             </p>
+            <p>
+              <label>
+                Sınıfta derse katılım sağladı mı?
+                <select name="participation" required onChange={handleChange} value={formData.participation || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
 
 
 
