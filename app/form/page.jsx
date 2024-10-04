@@ -141,6 +141,12 @@ export default function StudentRegistration() {
           </>
         )}
          {step === 3 && !formCompleted && (
+           <>
+           <p>
+             <label>
+               Dönemi: <input type="text" name="term" required onChange={handleChange} />
+             </label>
+           </p>
 
 
 
