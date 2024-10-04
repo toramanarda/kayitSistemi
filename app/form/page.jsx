@@ -2,6 +2,11 @@ export default function StudentRegistration() {
 
   const [formData, setFormData] = useState({});
 
+  const handleNext = (e) => {
+    e.preventDefault();
+    setStep((prev) => prev + 1);
+  };
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
