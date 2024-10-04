@@ -10,7 +10,20 @@ export default function StudentRegistration() {
       [name]: value,
     }));
   };
-  
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (formData.certification === "Evet") {
+      setCertificateStatus(`${formData.name} SERTİFİKA KAZANDI`);
+    } else {
+      setCertificateStatus(`${formData.name} SERTİFİKA KAZANAMADI`);
+    }
+
+    setStep(5);
+  };
+
+
   return (
     <>
       <h1>Öğrenci Kayıt Sistemi</h1>
