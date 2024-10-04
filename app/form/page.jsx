@@ -245,6 +245,9 @@ export default function StudentRegistration() {
             <button type="submit">Kaydet</button>
           </>
         )}
+        
+        {step === 5 && (
+          <>
 
 
 
