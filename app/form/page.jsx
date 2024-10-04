@@ -267,13 +267,13 @@ export default function StudentRegistration() {
               <li>Proje Geliştirdi mi: {formData.developedProject}</li>
               <li>Derste Odaklandı mı: {formData.focused}</li>
             </ul>
-
-
-
-
-
-
-
+            
+            <button type="button" onClick={handleReset}>
+              Yeni Kayıt
+            </button>
           </>
-        )
-        }>
+        )}
+      </form>
+    </>
+  );
+}
