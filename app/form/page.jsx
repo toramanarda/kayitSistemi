@@ -208,6 +208,43 @@ export default function StudentRegistration() {
                 </select>
               </label>
             </p>
+            <p>
+              <label>
+                Derse tam saatinde geldi mi?
+                <select name="onTime" required onChange={handleChange} value={formData.onTime || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label>
+                Derse odaklandı mı?
+                <select name="focused" required onChange={handleChange} value={formData.focused || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label>
+                Sertifika almayı hak ediyor mu?
+                <select name="certification" required onChange={handleChange} value={formData.certification || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+
+            <button type="button" onClick={handlePrev}>
+              Geri
+            </button>
+            <button type="submit">Kaydet</button>
+          </>
+        )}
 
 
 
