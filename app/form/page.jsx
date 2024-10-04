@@ -1,7 +1,11 @@
-export default function StudentRegistration() {
+"use client";
+import { useState } from "react";
 
+export default function StudentRegistration() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
+  const [certificateStatus, setCertificateStatus] = useState("");
+  const [formCompleted, setFormCompleted] = useState(false);
 
   const handleNext = (e) => {
     e.preventDefault();
@@ -11,7 +15,6 @@ export default function StudentRegistration() {
   const handlePrev = () => {
     setStep((prev) => prev - 1);
   };
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +36,10 @@ export default function StudentRegistration() {
     setStep(5);
   };
 
+  const handleReset = () => {
+    setFormData({});
+    setStep(1);
+  };
 
   return (
     <>
@@ -140,6 +147,8 @@ export default function StudentRegistration() {
             </button>
           </>
         )}
+
+
         {step === 3 && !formCompleted && (
           <>
             <p>
@@ -176,6 +185,7 @@ export default function StudentRegistration() {
           </>
         )}
 
+
         {step === 4 && !formCompleted && (
           <>
             <p>
@@ -188,6 +198,7 @@ export default function StudentRegistration() {
                 </select>
               </label>
             </p>
+
             <p>
               <label>
                 Sınıfta derse katılım sağladı mı?
@@ -246,6 +257,8 @@ export default function StudentRegistration() {
           </>
         )}
 
+
+
         {step === 5 && (
           <>
             <h2>{certificateStatus}</h2>
@@ -267,7 +280,7 @@ export default function StudentRegistration() {
               <li>Proje Geliştirdi mi: {formData.developedProject}</li>
               <li>Derste Odaklandı mı: {formData.focused}</li>
             </ul>
-            
+
             <button type="button" onClick={handleReset}>
               Yeni Kayıt
             </button>
