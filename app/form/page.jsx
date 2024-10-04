@@ -157,6 +157,24 @@ export default function StudentRegistration() {
                 Bölümü: <input type="text" name="department" required onChange={handleChange} />
               </label>
             </p>
+            <p>
+              <label>
+                Sınıfı: <input type="text" name="class" required onChange={handleChange} />
+              </label>
+            </p>
+            <p>
+              <label>
+                Öğrenci No (Opsiyonel): <input type="text" name="studentNo" onChange={handleChange} />
+              </label>
+            </p>
+            <button type="button" onClick={handlePrev}>
+              Geri
+            </button>
+            <button type="button" onClick={handleNext}>
+              İleri
+            </button>
+          </>
+        )}
 
 
 
