@@ -198,6 +198,16 @@ export default function StudentRegistration() {
                 </select>
               </label>
             </p>
+            <p>
+              <label>
+                Proje geliştirdi mi?
+                <select name="developedProject" required onChange={handleChange} value={formData.developedProject || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
 
 
 
