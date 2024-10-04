@@ -31,7 +31,35 @@ export default function StudentRegistration() {
       <form onSubmit={handleSubmit}>
         <p>
           <label>
-            İsim: <input type="text" name="name" required onChange={handleChange}></input>
+            İsim: <input type="text" name="name" required onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Soyisim: <input type="text" name="surname" required onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Doğum Tarihi:
+            <input type="date" name="birthDate" required onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            TC No: <input type="text" name="tcno" required onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Cinsiyet:
+            <select name="gender" required onChange={handleChange}>
+              <option value="">Seçiniz</option>
+              <option value="Erkek">Erkek</option>
+              <option value="Kadın">Kadın</option>
+              <option value="Diğer">Diğer</option>
+              <option value="helikopter">Atak Helikopteri</option>
+            </select>
           </label>
         </p>
       </form>
