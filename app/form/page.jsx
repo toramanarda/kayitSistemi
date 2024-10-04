@@ -140,14 +140,14 @@ export default function StudentRegistration() {
             </button>
           </>
         )}
-         {step === 3 && !formCompleted && (
-           <>
-           <p>
-             <label>
-               Dönemi: <input type="text" name="term" required onChange={handleChange} />
-             </label>
-           </p>
-           <p>
+        {step === 3 && !formCompleted && (
+          <>
+            <p>
+              <label>
+                Dönemi: <input type="text" name="term" required onChange={handleChange} />
+              </label>
+            </p>
+            <p>
               <label>
                 Eğitmeni: <input type="text" name="instructor" required onChange={handleChange} />
               </label>
@@ -176,10 +176,104 @@ export default function StudentRegistration() {
           </>
         )}
 
+        {step === 4 && !formCompleted && (
+          <>
+            <p>
+              <label>
+                Ödevlerin tamamını tamamladı mı?
+                <select name="completedAssignments" required onChange={handleChange} value={formData.completedAssignments || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label>
+                Sınıfta derse katılım sağladı mı?
+                <select name="participation" required onChange={handleChange} value={formData.participation || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label>
+                Proje geliştirdi mi?
+                <select name="developedProject" required onChange={handleChange} value={formData.developedProject || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label>
+                Derse tam saatinde geldi mi?
+                <select name="onTime" required onChange={handleChange} value={formData.onTime || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label>
+                Derse odaklandı mı?
+                <select name="focused" required onChange={handleChange} value={formData.focused || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label>
+                Sertifika almayı hak ediyor mu?
+                <select name="certification" required onChange={handleChange} value={formData.certification || ""}>
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </label>
+            </p>
 
+            <button type="button" onClick={handlePrev}>
+              Geri
+            </button>
+            <button type="submit">Kaydet</button>
+          </>
+        )}
 
-
-
-      </>
-      )
-}>
+        {step === 5 && (
+          <>
+            <h2>{certificateStatus}</h2>
+            <h3>Öğrenci Bilgileri</h3>
+            <ul>
+              <li>Adı Soyadı: {formData.name} {formData.surname}</li>
+              <li>Doğum Tarihi: {formData.birthDate}</li>
+              <li>Cinsiyet: {formData.gender}</li>
+              <li>TC No: {formData.tcno}</li>
+              <li>Ön Sınav Puanı: {formData.preExamScore}</li>
+              <li>Mülakat Notları: {formData.interviewNotes}</li>
+              <li>Mülakat Puanı: {formData.interviewScore}</li>
+              <li>Dönem: {formData.term}</li>
+              <li>Eğitmen: {formData.instructor}</li>
+              <li>Bölüm: {formData.department}</li>
+              <li>Sınıf: {formData.class}</li>
+              <li>Ödevleri Tamamladı mı: {formData.completedAssignments}</li>
+              <li>Sınıfta Derse Katıldı mı: {formData.participation}</li>
+              <li>Proje Geliştirdi mi: {formData.developedProject}</li>
+              <li>Derste Odaklandı mı: {formData.focused}</li>
+            </ul>
+            
+            <button type="button" onClick={handleReset}>
+              Yeni Kayıt
+            </button>
+          </>
+        )}
+      </form>
+    </>
+  );
+}
