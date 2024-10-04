@@ -147,6 +147,11 @@ export default function StudentRegistration() {
                Dönemi: <input type="text" name="term" required onChange={handleChange} />
              </label>
            </p>
+           <p>
+              <label>
+                Eğitmeni: <input type="text" name="instructor" required onChange={handleChange} />
+              </label>
+            </p>
 
 
 
