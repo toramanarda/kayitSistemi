@@ -62,6 +62,9 @@ export default function StudentRegistration() {
             </select>
           </label>
         </p>
+        <button type="button" onClick={handleNext}>
+          İleri
+        </button>
       </form>
     </>
   )
